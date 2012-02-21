@@ -1,1 +1,0 @@
-bump version number to 2 to fix chrome version comparison bug
