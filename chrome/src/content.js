@@ -20,13 +20,12 @@ function hide_classes(ev) {
   
   var ce = document.querySelectorAll(plusClasses);
   
-  console.info("Checking:", plusClasses);
-  console.info('got:', ce);
-  
   if(ce.length > 0) {
     for(var c in ce) {
-      console.info('blocking:', ce[c]);
-      ce[c].style.display = 'none';
+      // console.info('block_class:', ce[c]);
+      try {
+        ce[c].style.display = 'none';
+      } catch(e) { }
     }
   }
   
@@ -35,10 +34,8 @@ function hide_classes(ev) {
 
 
 function check_site(ev) {
-  // console.info(ev);
-  // console.info(ev.target.src);
   var full_url = ev.target.src || ev.url;
-  console.info(full_url);
+  // console.info(full_url);
   
   if (!full_url || full_url.substr(0, 5) == 'data:') return 0;
   
@@ -46,7 +43,7 @@ function check_site(ev) {
   
   if(hs == 'plus.google.com' && document.location.host != hs) {
     ev.preventDefault();
-    console.info('Blocked:', hs);
+    // console.info('block_site:', hs);
   }
   
   return 0;
