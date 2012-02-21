@@ -1,0 +1,25 @@
+/*
+	Copyright 2010 Nik Cubrilovic [http://nikcub.appspot.com]. All Rights Reserved.
+
+	Use of this source code is governed by a 3-clause BSD license.
+	See the LICENSE file for details.
+*/
+{
+	"name": "Blockplus",
+	"version": "4",
+	"description": "Block Google plus toolbar from all non-plus sites.",
+	"update_url": "http://nikcub.appspot.com/projects/blockplus/updates.xml",
+	"content_scripts": [
+		{
+			"all_frames": true,
+			"js": [ "content.js" ],
+			"matches": [ "http://*.google.com/*", "https://*.google.com/*" ],
+			"run_at": "document_start"
+		}
+	],
+	"icons" : {
+		"19" : "img/blockplus-19.png",
+		"48" : "img/blockplus-48.png",
+		"128" : "img/blockplus-128.png"
+	}	
+}
